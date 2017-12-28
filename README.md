@@ -1,1 +1,1 @@
-# helloworld I said!
+This is my first attempt at golang!
