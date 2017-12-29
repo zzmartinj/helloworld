@@ -7,7 +7,7 @@ var counter=0;
 
 function writeNumbers(res){
     
-    //increment and log counter
+    //increment and log counter to test out async workings
     for (i=0; i<100; i++){
         counter++;
         res.write(counter.toString()+'\n');
