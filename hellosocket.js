@@ -5,7 +5,7 @@ var server=net.createServer(function(conn){
 
     conn.on('data',function(data){
         console.log(data + ' from ' + conn.remoteAddress + ' ' +conn.remotePort);
-        conn.write('Repeating', + data);
+        conn.write('Repeating:' + data) + '\n';
 
     });
 
