@@ -4,7 +4,8 @@
   "description": "hello world!",
   "main": "helloworld.js",
   "dependencies": {
-    "colors": "^1.1.2"
+    "colors": "^1.1.2",
+    "mime": "^2.1.0"
   },
   "devDependencies": {},
   "scripts": {

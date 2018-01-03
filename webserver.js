@@ -1,7 +1,8 @@
 var http = require('http');
 var fs = require('fs');
-var base = './';
+
 var pathname = '';
+var mime = require('mime');
 
 
 function processfile(pathname, req, res) {
@@ -17,19 +18,21 @@ function processfile(pathname, req, res) {
 
 //create the http server
 http.createServer(function(req, res) {
-    pathname = base + req.url;
+    pathname = __dirname + req.url;
     console.log("Path name is: " + pathname);
 
     fs.exists(pathname, function(exists) {
         if (exists) {
-            res.setHeader('Content-Type', 'static-html');
+
+            var mimetype = mime.getType(pathname);
+            res.setHeader('Content-type', mimetype);
             processfile(pathname, req, res);
         } else { //We didn't find the file.
             res.writeHead(404);
             res.write('Bad Request. File not found!');
+            res.end(); //put the end of the response here to avoid async issue
 
         }
-        res.end();
     });
 
 }).listen(8214);
