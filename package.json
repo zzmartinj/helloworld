@@ -5,6 +5,7 @@
   "main": "helloworld.js",
   "dependencies": {
     "colors": "^1.1.2",
+    "connect": "^3.6.5",
     "mime": "^2.1.0"
   },
   "devDependencies": {},
