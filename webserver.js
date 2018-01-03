@@ -27,8 +27,9 @@ http.createServer(function(req, res) {
         } else { //We didn't find the file.
             res.writeHead(404);
             res.write('Bad Request. File not found!');
-            res.end();
+
         }
+        res.end();
     });
 
 }).listen(8214);
